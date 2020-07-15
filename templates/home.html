@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href={{url_for('static', filename='css/home.css')}}>
+{% endblock %}
+{% block body %}
+<section>
+    <div class="left-side">
+        <a href={{url_for('play')}}>Try Now</a>
+        <div class="ball">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1>SUDOKU SOLVER</h1>
+        <p> Solving the Sudoku using :</p>
+        <span>Computer Vision</span><br>
+        <span>Machine Learning</span><br>
+        <span>Backtracking</span>
+    </div>
+</section>
+{% endblock %}

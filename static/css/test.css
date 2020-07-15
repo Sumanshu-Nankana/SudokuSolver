@@ -1,0 +1,47 @@
+.upload_img{
+    width: 100%;
+    height: 150px;
+    color: white;
+    margin-top: 50px;
+}
+.upload_img h3{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    padding: 20px;
+}
+.file{
+    padding: 20px;
+    margin-left: 20px;
+    background-color: lightgray;
+    border-radius: 20%;
+    color: black;
+    font-size: 15px;
+}
+.submit{
+    background-color: chartreuse;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 4px;
+    width: 100px;
+    color:blue;
+    margin-left: 20px;
+}
+.solution_img{
+    width: 100%;
+    height: 300px;
+    background-color: red;
+
+}
+.solution_img img{
+    height: 250px;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 10px;
+}
+.solution_img p{
+    font-size: 20px;
+    margin-left: 100px;
+    color: white;
+}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href={{url_for('static', filename='css/play.css')}}>
+{% endblock %}
+
+{% block body %}
+<div class="upload_img">
+    <h3>Upload the Unsolved Sudoku Image</h3>
+    <form id="uplaod-form" method="POST" action="{{ url_for('solve') }}" enctype="multipart/form-data">
+        <input class="file" type="file" name="file" accept="image/*">
+        <input class="submit" type="submit" value="Solve">
+    </form>
+</div>
+<div class="solution_img">
+    {% if filename %}
+        <!-- <p>Input Image</p> -->
+        <img src="{{url_for('static', filename='uploads/' + filename)}}">
+        <table class="predict-table">
+            {% for row in pred_grid %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% if solution[0] %}
+        <table class="solution-table">
+            {% for sol in solution[1] %}
+            <tr>
+                <td>{{sol[0]}}</td>
+                <td>{{sol[1]}}</td>
+                <td>{{sol[2]}}</td>
+                <td>{{sol[3]}}</td>
+                <td>{{sol[4]}}</td>
+                <td>{{sol[5]}}</td>
+                <td>{{sol[6]}}</td>
+                <td>{{sol[7]}}</td>
+                <td>{{sol[8]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a class="graph" href="{{url_for('see_graph')}}">Click to see End to End Flow</a>
+        {% endif %}
+        {% if not solution[0] %}
+        <span>I am unable to predict digits correctly!</span>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

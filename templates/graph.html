@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href={{url_for('static', filename='css/graph.css')}}>
+{% endblock %}
+{% block body %}
+<img src={{url_for('static', filename='images/10_all.png')}}>
+{% endblock %}

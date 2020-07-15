@@ -1,0 +1,89 @@
+section{
+    display: flex;
+    width: 100%;
+}
+.left-side{
+    width: 60%;
+    margin-top: 130px;
+}
+.left-side a{
+    margin-left: 250px;
+    margin-top: 130px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    border-radius: 17px;
+    padding: 20px 35px;
+    text-decoration: none;
+}
+.left-side a:hover{
+    cursor: pointer;
+}
+.right-side{
+    width: 40%;
+    height: 300px;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    padding: 40px;
+    margin-right: 100px;
+}
+.right-side h1{
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.right-side p{
+    font-size: 1.1rem;
+    padding: 30px;
+}
+a:hover{
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+div .ball{
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+    margin-left: 170px;
+}
+div ul{
+    display: flex;
+}
+div ul li{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    list-style: none;
+    margin: 0px 10px;
+    border-radius: 50%;
+    animation: bouncy 1s linear infinite;
+}
+@keyframes bouncy{
+    0%{transform: tranlateY(0);}
+    50%{transform: translateY(-100px);}
+    100%{transform: translateY(0);}
+}
+.ball ul li:nth-child(1){
+    animation-delay: 0.2s;
+    background-color: #fdcb6e;
+}
+.ball ul li:nth-child(2){
+    animation-delay: 0.6s;
+    background-color: #ff7675;
+}
+.ball ul li:nth-child(3){
+    animation-delay: 0.4s;
+    background-color: #81ecec;
+}
+.ball ul li:nth-child(4){
+    animation-delay: 0.8s;
+    background-color: #55ef78;
+}
+.ball ul li:nth-child(5){
+    animation-delay: 0.5s;
+    background-color: #fd79a8;
+}

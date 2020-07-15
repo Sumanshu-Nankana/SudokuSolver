@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href={{url_for('static', filename='css/play.css')}}>
+{% endblock %}
+
+{% block body %}
+<div class="upload_img">
+    <h3>Upload the Unsolved Sudoku Image</h3>
+    <form id="uplaod-form" method="POST" action="{{ url_for('solve') }}" enctype="multipart/form-data">
+        <input class="file" type="file" name="file" accept="image/*">
+        <input class="submit" type="submit" value="Solve">
+    </form>
+</div>
+<div class="solution_img">
+    {% if filename %}
+        <p>Input Image</p>
+        <img src="{{url_for('static', filename='uploads/' + filename)}}">
+        {% for row in pred_grid %}
+        <table>
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+            </tr>
+        </table>
+        {% endfor%}
+    {% endif %}
+</div>
+{% endblock %}
