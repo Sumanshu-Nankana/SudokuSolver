@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+src/cnn_train_model2.py
+templates/test.html
+Dockerfile
