@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+#FROM ubuntu:20.04
+FROM jjanzic/docker-python3-opencv
 
 RUN apt-get update && apt-get install -y python3 python3-pip sudo
 
