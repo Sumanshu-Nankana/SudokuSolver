@@ -1,6 +1,7 @@
 import os
 import copy
 import cv2
+from logging import FileHandler, WARNING
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -12,6 +13,11 @@ __author__= "sumanshu"
 
 app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+if not app.debug:
+    file_handler = FileHandler('sudoku.log')
+    file_handler.setLevel(WARNING)
+    app.logger.addHandler(file_handler)
 
 @app.route('/')
 @app.route('/home')
@@ -58,7 +64,7 @@ def see_graph():
     images = os.listdir('./Images')
     images.sort()
     path = ['./Images/'+i for i in images]
-    print(path)
+    #print(path)
     # for i in range(7):
     #     plt.subplot(2,4,i+1)
     #     img = cv2.imread(path[i])
@@ -118,4 +124,4 @@ def see_graph():
     return render_template('graph.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
