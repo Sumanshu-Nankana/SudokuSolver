@@ -11,6 +11,8 @@ COPY ./src /app/src
 
 COPY ./model /app/model
 
+COPY ./Images /app/Images
+
 COPY ./static /app/static
 
 COPY ./templates /app/templates
